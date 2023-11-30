@@ -38,13 +38,10 @@ export class ReservasService {
   },
  ];
 
-  //TO DO FIX THIS METHOD, ISN'T ORDERNING OK
-  ngOnChanges(): void {
-    if(this.reservas){
-      this.reservas = this.reservas.sort(function (a :ReservaInterface, b: ReservaInterface){
-        return a.fecha.localeCompare(b.fecha, 'en', { numeric: true })
-      });
-    }
+  orderList(){
+    this.reservas.sort(function (a, b){
+      return ( a.fecha.toLowerCase().localeCompare(b.fecha.toLowerCase()))
+    });
   }
 
   onNewReserva( reserva : ReservaInterface): void{
@@ -57,11 +54,13 @@ export class ReservasService {
       estado: reserva.estado
     } 
     this.reservas.push(nuevaReserva);
+    this.orderList();
     this.saveLocalStorage();
   }
 
   onDeleteReserva(idReserva: string):void{
     this.reservas = this.reservas.filter( reserva => reserva.id !== idReserva)
+    this.orderList();
     this.saveLocalStorage();
   }
 

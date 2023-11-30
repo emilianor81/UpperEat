@@ -18,7 +18,6 @@ export class ListaComponent {
   @Input()
   public reservasMain: ReservaInterface[] = [];
 
-  //TO DO: ORDER THIS LIST FOR DATA AND HOUR 
   //TO DO CHANGE RESERVATION STATUS 
 
   changeReservation(idReserva:number) {
