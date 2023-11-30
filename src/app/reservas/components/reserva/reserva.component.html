@@ -1,0 +1,41 @@
+<div class="container" >
+    <h2>Crear una reserva</h2>
+    <form class="col-9" (ngSubmit)="emitReserva()">
+        <input class="form-control mb-2"
+         [(ngModel)]="reserva.cliente"
+         name="cliente"
+         type="text"
+         placeholder="Cliente">
+
+        <input class="form-control mb-2"
+         [(ngModel)]="reserva.personas" 
+         name="personas"
+         type="number" 
+         placeholder="Numero de personas">
+
+        <input class="form-control mb-2" 
+        [(ngModel)]="reserva.fecha"
+        name="fecha"
+         type="date" placeholder="Fecha">
+
+        <input class="form-control mb-2" 
+        [(ngModel)]="reserva.hora"
+        name="hora"
+         type="time" placeholder="Hora">
+
+         <input class="form-control mb-2" 
+         [(ngModel)]="reserva.estado"
+         name="estado"
+          type="text" placeholder="Estado"
+          list="defaultEstados"
+          > 
+          <datalist id="defaultEstados">
+            <option value="Pendiente"></option>
+            <option value="Confirmada"></option>
+            <option value="Cancelada"></option>
+            <option value="Completada"></option>
+          </datalist>
+
+          <button type="submit" class="btn btn-success">Crear una reserva</button>
+    </form>
+</div>
