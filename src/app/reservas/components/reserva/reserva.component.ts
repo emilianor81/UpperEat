@@ -17,6 +17,7 @@ export class ReservaComponent{
   public onNewReserva: EventEmitter<ReservaInterface> = new EventEmitter();
 
   public reserva: ReservaInterface = {
+    id: '',
     cliente: '',
     personas: 0,
     fecha: '',
@@ -32,6 +33,7 @@ export class ReservaComponent{
     this.onNewReserva.emit(this.reserva)
 
     this.reserva = {
+      id: '',
       cliente: '',
       personas: 0,
       fecha: '',

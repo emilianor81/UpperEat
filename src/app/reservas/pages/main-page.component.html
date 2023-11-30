@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-5 mt-10">
-        <app-reserva (onNewReserva)="onNewReserva($event)"></app-reserva>
+        <app-reserva (onNewReserva)="reservaService.onNewReserva($event)"></app-reserva>
     </div>
 
     <div class="col-11 mt-4">
-        <app-lista (onEmitDeleteReserva)="onDeleteReserva($event)" [reservasMain]="reservas"></app-lista>
+        <app-lista (onEmitDeleteReserva)="reservaService.onDeleteReserva($event)" [reservasMain]="reservaService.reservas"></app-lista>
     </div>
 
 </div>

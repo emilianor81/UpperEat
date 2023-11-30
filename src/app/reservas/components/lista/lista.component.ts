@@ -13,7 +13,7 @@ import { ReservaInterface } from '../../../interfaces/reservas'
 export class ListaComponent {
 
   @Output()
-  public onEmitDeleteReserva: EventEmitter<number> = new EventEmitter();
+  public onEmitDeleteReserva: EventEmitter<string> = new EventEmitter();
   
   @Input()
   public reservasMain: ReservaInterface[] = [];
@@ -22,11 +22,11 @@ export class ListaComponent {
   //TO DO CHANGE RESERVATION STATUS 
 
   changeReservation(idReserva:number) {
-    //TODO IMPLEMENT THIS METHOD
+    //TO DO IMPLEMENT THIS METHOD
     console.log('Flag- changeReservation', this.reservasMain[0])
   }
 
-  deleteReservationEmit(idReserva:number) {
+  deleteReservationEmit(idReserva:string) {
     console.log('Flag- deleteReservation', idReserva)
     this.onEmitDeleteReserva.emit(idReserva)  
   }
