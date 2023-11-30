@@ -27,8 +27,6 @@ export class ReservaComponent{
 
 
   emitReserva() {
-    console.log('FLAG - this.reserva', this.reserva )
-
     if( !this.reserva.cliente) return;
     this.onNewReserva.emit(this.reserva)
 
@@ -40,8 +38,5 @@ export class ReservaComponent{
       hora: '',
       estado: ''
     };
-
   }
-
-
 }

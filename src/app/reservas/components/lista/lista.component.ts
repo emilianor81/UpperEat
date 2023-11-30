@@ -18,15 +18,7 @@ export class ListaComponent {
   @Input()
   public reservasMain: ReservaInterface[] = [];
 
-  //TO DO CHANGE RESERVATION STATUS 
-
-  changeReservation(idReserva:number) {
-    //TO DO IMPLEMENT THIS METHOD
-    console.log('Flag- changeReservation', this.reservasMain[0])
-  }
-
   deleteReservationEmit(idReserva:string) {
-    console.log('Flag- deleteReservation', idReserva)
     this.onEmitDeleteReserva.emit(idReserva)  
   }
 }
